@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced Cricket Scoreboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #dbeafe, #eff6ff);
+      margin: 0;
+      padding: 30px;
+    }
+    .scoreboard {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    .scoreboard h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .score {
+      font-size: 30px;
+      margin: 15px 0;
+      text-align: center;
+      font-weight: bold;
+    }
+    .buttons, .extras, .batsmen {
+      text-align: center;
+      margin-top: 10px;
+    }
+    button {
+      padding: 8px 12px;
+      margin: 5px;
+      font-size: 14px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1d4ed8;
+    }
+    .summary {
+      margin-top: 30px;
+      font-size: 15px;
+      background-color: #f1f5f9;
+      padding: 15px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="scoreboard">
+    <h2>Team A Scoreboard</h2>
+    <div class="score" id="scoreDisplay">0 / 0 (0.0)</div>
+    <div class="buttons">
+      <button onclick="addRun(1)">+1 Run</button>
+      <button onclick="addRun(2)">+2 Runs</button>
+      <button onclick="addRun(3)">+3 Runs</button>
+      <button onclick="addRun(4)">+4 Runs</button>
+      <button onclick="addRun(6)">+6 Runs</button>
+    </div>
+    <div class="extras">
+      <button onclick="addExtra('wide')">Wide</button>
+      <button onclick="addExtra('noball')">No Ball</button>
+      <button onclick="addExtra('bye')">Bye</button>
+    </div>
+    <div class="buttons">
+      <button onclick="addBall()">Dot Ball</button>
+      <button onclick="addWicket()">Wicket</button>
+    </div>
+    <div class="summary" id="summary"></div>
+  </div>
+
+  <script src="scoreboard/state.js"></script>
+  <script src="scoreboard/ui.js"></script>
+  <script src="scoreboard/logic.js"></script>
+</body>
+</html>
